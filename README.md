@@ -24,6 +24,15 @@ vncserver :1 -geometry 1920x1080 -depth 24
 gvncviewer :1
 ```
 
+## SSH tunnel note
+
+```sh
+docker container run -d -p 127.0.0.1:5902:5901 --name vld vld:1
+ssh x.x.x.x -L 5903:127.0.0.1:5902
+
+gvncviewer :3
+```
+
 ## License
 
 [![Public Domain](http://i.creativecommons.org/p/mark/1.0/88x31.png)](http://creativecommons.org/publicdomain/mark/1.0/ "license")
